@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +18,12 @@
   --text: #1A1916;
   --text-muted: #6B6A64;
   --text-faint: #9B9A94;
-  --accent: #4A3FD4;
-  --accent-bg: #EEEDFD;
-  --accent-text: #2D249E;
+  --accent: #D70000;
+  --accent-bg: #FDEAEA;
+  --accent-text: #9A0000;
   --green: #0F6E56;
   --green-bg: #E1F5EE;
   --green-text: #0A4D3C;
-  --amber: #92570A;
-  --amber-bg: #FEF3DC;
-  --amber-text: #7A470A;
   --gray-bg: #EEECEA;
   --gray-text: #4A4A46;
   --coral: #C94020;
@@ -35,263 +32,72 @@
   --radius: 12px;
   --radius-sm: 8px;
   --radius-xs: 6px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 0 0 0.5px rgba(0,0,0,0.06);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-}
-.shell {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+.shell { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
-/* HEADER */
-.topbar {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.topbar-left h1 {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
-  line-height: 1.2;
-}
-.topbar-left p {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-.stats-pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-.stat-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  background: var(--surface);
-  border: 0.5px solid var(--border-strong);
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-muted);
-}
+.topbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.topbar-left h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.4px; line-height: 1.2; }
+.topbar-left p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+.topbar-logo { flex-shrink: 0; display: flex; align-items: center; padding-top: 4px; }
+.topbar-logo img { height: 42px; width: auto; display: block; }
+.stats-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem; }
+.stat-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: 20px; font-size: 12px; font-weight: 500; color: var(--text-muted); }
 .stat-pill .val { color: var(--text); font-weight: 600; }
 
-/* TABS */
-.tabs-bar {
-  display: flex;
-  gap: 2px;
-  background: var(--surface);
-  border: 0.5px solid var(--border-strong);
-  border-radius: var(--radius);
-  padding: 4px;
-  margin-bottom: 1.5rem;
-  width: fit-content;
-}
-.tab-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: 'DM Sans', sans-serif;
-  border: none;
-  background: none;
-  color: var(--text-muted);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
+.tabs-bar { display: flex; gap: 2px; background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 4px; margin-bottom: 1.5rem; width: fit-content; }
+.tab-btn { display: flex; align-items: center; gap: 6px; padding: 7px 14px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; border: none; background: none; color: var(--text-muted); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; white-space: nowrap; }
 .tab-btn:hover { color: var(--text); background: var(--surface2); }
-.tab-btn.active {
-  background: var(--accent);
-  color: #fff;
-}
+.tab-btn.active { background: var(--accent); color: #fff; }
 .tab-btn i { font-size: 15px; }
 
-/* VIEWS */
 .view { display: none; }
 .view.active { display: block; }
 
-/* MONTH LABEL */
-.month-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin: 1.5rem 0 8px;
-}
+.month-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-faint); margin: 1.5rem 0 8px; }
 .month-label:first-child { margin-top: 0; }
 
-/* FAIR CARDS */
-.fair-card {
-  background: var(--surface);
-  border: 0.5px solid var(--border-strong);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.fair-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(74,63,212,0.08);
-  transform: translateY(-1px);
-}
+.fair-card { background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px; cursor: pointer; transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.fair-card:hover { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(215,0,0,0.08); transform: translateY(-1px); }
 .fair-card.status-past { opacity: 0.6; }
 .fair-card.status-past:hover { opacity: 1; }
 .fair-info { flex: 1; min-width: 0; }
-.fair-name {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.fair-meta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-.fair-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
+.fair-name { font-size: 14px; font-weight: 600; letter-spacing: -0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fair-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.fair-meta span { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--text-muted); }
 .fair-meta i { font-size: 12px; }
-.fair-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  flex-shrink: 0;
-}
-.arrow-hint {
-  font-size: 11px;
-  color: var(--text-faint);
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  transition: color 0.15s;
-}
+.fair-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.arrow-hint { font-size: 11px; color: var(--text-faint); display: flex; align-items: center; gap: 3px; transition: color 0.15s; }
 .fair-card:hover .arrow-hint { color: var(--accent); }
 
-/* BADGES */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 9px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.01em; }
 .badge-past { background: var(--gray-bg); color: var(--gray-text); }
 .badge-soon { background: var(--accent-bg); color: var(--accent-text); }
 .badge-upcoming { background: var(--green-bg); color: var(--green-text); }
-.badge-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
 .badge-soon .badge-dot { background: var(--accent); }
 .badge-upcoming .badge-dot { background: var(--green); }
 .badge-past .badge-dot { background: var(--gray-text); }
 
-/* COUNTDOWN */
-.countdown {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--text-faint);
-  font-variant-numeric: tabular-nums;
-}
+.countdown { font-size: 11px; font-weight: 500; color: var(--text-faint); font-variant-numeric: tabular-nums; }
 .countdown.soon { color: var(--accent-text); }
 
-/* TASKS VIEW */
-.show-selector-wrap {
-  margin-bottom: 1.25rem;
-}
-.show-selector-wrap label {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: 6px;
-}
-.show-selector-wrap select {
-  width: 100%;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 14px;
-  border: 0.5px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text);
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B6A64' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  cursor: pointer;
-}
-.show-selector-wrap select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,63,212,0.1); }
-.show-header-card {
-  background: var(--accent-bg);
-  border: 0.5px solid rgba(74,63,212,0.18);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.show-selector-wrap { margin-bottom: 1.25rem; }
+.show-selector-wrap label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 6px; }
+.show-selector-wrap select { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 10px 14px; border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B6A64' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+.show-selector-wrap select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(215,0,0,0.1); }
+
+.show-header-card { background: var(--accent-bg); border: 0.5px solid rgba(215,0,0,0.18); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 12px; }
 .show-header-emoji { font-size: 28px; line-height: 1; }
 .show-header-info { flex: 1; }
 .show-header-name { font-size: 16px; font-weight: 600; color: var(--accent-text); letter-spacing: -0.2px; }
 .show-header-sub { font-size: 12px; color: var(--accent); margin-top: 2px; display: flex; align-items: center; gap: 8px; }
 .show-header-sub i { font-size: 12px; }
 
-/* BUCKETS */
 .bucket { margin-bottom: 1.5rem; }
-.bucket-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 2px;
-  margin-bottom: 8px;
-}
-.bucket-icon {
-  width: 28px; height: 28px;
-  border-radius: var(--radius-xs);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.bucket-head { display: flex; align-items: center; gap: 10px; padding: 0 2px; margin-bottom: 8px; }
+.bucket-icon { width: 28px; height: 28px; border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .bucket-icon i { font-size: 15px; }
 .b-pre .bucket-icon { background: var(--accent-bg); color: var(--accent); }
 .b-during .bucket-icon { background: var(--green-bg); color: var(--green); }
@@ -300,146 +106,36 @@ body {
 .b-pre .bucket-label { color: var(--accent-text); }
 .b-during .bucket-label { color: var(--green-text); }
 .b-post .bucket-label { color: var(--coral-text); }
-.bucket-count-badge {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 10px;
-}
+.bucket-count-badge { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
 .b-pre .bucket-count-badge { background: var(--accent-bg); color: var(--accent); }
 .b-during .bucket-count-badge { background: var(--green-bg); color: var(--green); }
 .b-post .bucket-count-badge { background: var(--coral-bg); color: var(--coral); }
 
-/* TASKS */
-.task-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 14px;
-  background: var(--surface);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius-sm);
-  margin-bottom: 4px;
-  transition: border-color 0.12s;
-}
+.task-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 4px; transition: border-color 0.12s; }
 .task-row:hover { border-color: var(--border-strong); }
-.task-check {
-  width: 17px; height: 17px;
-  border-radius: 5px;
-  border: 1.5px solid var(--border-strong);
-  flex-shrink: 0;
-  margin-top: 1px;
-  cursor: pointer;
-  transition: all 0.15s;
-  display: flex; align-items: center; justify-content: center;
-}
+.task-check { width: 17px; height: 17px; border-radius: 5px; border: 1.5px solid var(--border-strong); flex-shrink: 0; margin-top: 1px; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; }
 .task-check:hover { border-color: var(--accent); background: var(--accent-bg); }
 .task-check.checked { background: var(--accent); border-color: var(--accent); }
-.task-check.checked::after {
-  content: '';
-  width: 9px; height: 6px;
-  border-left: 1.5px solid #fff;
-  border-bottom: 1.5px solid #fff;
-  transform: rotate(-45deg) translateY(-1px);
-  display: block;
-}
+.task-check.checked::after { content: ''; width: 9px; height: 6px; border-left: 1.5px solid #fff; border-bottom: 1.5px solid #fff; transform: rotate(-45deg) translateY(-1px); display: block; }
 .task-body { flex: 1; }
-.task-text {
-  font-size: 13px;
-  line-height: 1.45;
-  color: var(--text);
-  transition: color 0.15s;
-}
-.task-row.done .task-text {
-  color: var(--text-faint);
-  text-decoration: line-through;
-}
-.assignee-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 5px;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 10px;
-  background: var(--surface2);
-  color: var(--text-muted);
-  border: 0.5px solid var(--border);
-}
+.task-text { font-size: 13px; line-height: 1.45; color: var(--text); transition: color 0.15s; }
+.task-row.done .task-text { color: var(--text-faint); text-decoration: line-through; }
+.assignee-chip { display: inline-flex; align-items: center; gap: 4px; margin-top: 5px; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; background: var(--surface2); color: var(--text-muted); border: 0.5px solid var(--border); }
 .assignee-chip i { font-size: 11px; }
 
-/* GUIDE */
 .guide-section { margin-bottom: 2rem; }
-.guide-section-title {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.1px;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.guide-section-title { font-size: 14px; font-weight: 600; letter-spacing: -0.1px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
 .guide-section-title i { font-size: 16px; color: var(--accent); }
-.step-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 10px;
-}
-.step-num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.step-row { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+.step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .step-body { flex: 1; font-size: 13px; line-height: 1.55; padding-top: 3px; color: var(--text-muted); }
 .step-body strong { color: var(--text); font-weight: 600; }
-.code-block {
-  background: #1A1916;
-  color: #D4D2C8;
-  border-radius: var(--radius-sm);
-  padding: 14px 16px;
-  font-size: 12px;
-  font-family: 'DM Mono', monospace;
-  line-height: 1.7;
-  margin: 8px 0 12px;
-}
-.code-block span { color: #A89FE8; }
-.tip-box {
-  background: var(--accent-bg);
-  border: 0.5px solid rgba(74,63,212,0.2);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius-xs);
-  padding: 10px 14px;
-  font-size: 12px;
-  color: var(--accent-text);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-top: 6px;
-}
+.code-block { background: #1A1916; color: #D4D2C8; border-radius: var(--radius-sm); padding: 14px 16px; font-size: 12px; font-family: 'DM Mono', monospace; line-height: 1.7; margin: 8px 0 12px; }
+.code-block span { color: #F08080; }
+.tip-box { background: var(--accent-bg); border: 0.5px solid rgba(215,0,0,0.2); border-left: 3px solid var(--accent); border-radius: var(--radius-xs); padding: 10px 14px; font-size: 12px; color: var(--accent-text); display: flex; align-items: flex-start; gap: 8px; margin-top: 6px; }
 .tip-box i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-.deadline-card {
-  background: var(--surface);
-  border: 0.5px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.deadline-icon {
-  width: 32px; height: 32px;
-  border-radius: var(--radius-xs);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.deadline-card { background: var(--surface); border: 0.5px solid var(--border-strong); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 12px; }
+.deadline-icon { width: 32px; height: 32px; border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .deadline-icon i { font-size: 16px; }
 .dl-pre .deadline-icon { background: var(--accent-bg); color: var(--accent); }
 .dl-during .deadline-icon { background: var(--green-bg); color: var(--green); }
@@ -448,38 +144,14 @@ body {
 .deadline-phase { font-size: 13px; font-weight: 600; }
 .deadline-desc { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
 
-/* PROGRESS BAR */
 .progress-wrap { margin: 1.5rem 0 1rem; }
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
+.progress-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
 .progress-label strong { color: var(--text); }
-.progress-bar {
-  height: 6px;
-  background: var(--surface2);
-  border-radius: 99px;
-  overflow: hidden;
-  border: 0.5px solid var(--border);
-}
-.progress-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 99px;
-  transition: width 0.4s ease;
-}
+.progress-bar { height: 6px; background: var(--surface2); border-radius: 99px; overflow: hidden; border: 0.5px solid var(--border); }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 99px; transition: width 0.4s ease; }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.fair-card, .task-row {
-  animation: fadeUp 0.2s ease both;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.fair-card, .task-row { animation: fadeUp 0.2s ease both; }
 </style>
 </head>
 <body>
@@ -488,24 +160,27 @@ body {
   <div class="topbar">
     <div class="topbar-left">
       <h1>Trade Shows Juniper 2026</h1>
-      <p>Estructura Microsoft Planner · Asignaciones por persona</p>
+      <p>Microsoft Planner structure · Assigned by person</p>
       <div class="stats-pills">
-        <div class="stat-pill"><i class="ti ti-calendar-event"></i><span class="val">11</span> ferias</div>
-        <div class="stat-pill"><i class="ti ti-layout-list"></i><span class="val">3</span> fases por feria</div>
-        <div class="stat-pill"><i class="ti ti-check"></i><span class="val" id="pill-checked">0</span> tareas completadas</div>
+        <div class="stat-pill"><i class="ti ti-calendar-event"></i><span class="val">10</span> trade shows</div>
+        <div class="stat-pill"><i class="ti ti-layout-list"></i><span class="val">3</span> phases per show</div>
+        <div class="stat-pill"><i class="ti ti-check"></i><span class="val" id="pill-checked">0</span> tasks completed</div>
       </div>
+    </div>
+    <div class="topbar-logo">
+      <img src="data:image/jpeg;base64,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" alt="Juniper Travel Technology">
     </div>
   </div>
 
   <div class="tabs-bar">
     <button class="tab-btn active" onclick="switchTab('calendar')">
-      <i class="ti ti-calendar"></i> Calendario
+      <i class="ti ti-calendar"></i> Calendar
     </button>
     <button class="tab-btn" onclick="switchTab('planner')">
-      <i class="ti ti-checklist"></i> Tareas por feria
+      <i class="ti ti-checklist"></i> Tasks by show
     </button>
     <button class="tab-btn" onclick="switchTab('guide')">
-      <i class="ti ti-book-2"></i> Guía Planner
+      <i class="ti ti-book-2"></i> Planner Guide
     </button>
   </div>
 
@@ -515,7 +190,7 @@ body {
 
   <div id="view-planner" class="view">
     <div class="show-selector-wrap">
-      <label>Selecciona una feria</label>
+      <label>Select a trade show</label>
       <select id="fair-select" onchange="renderTasks()"></select>
     </div>
     <div id="tasks-content"></div>
@@ -523,12 +198,10 @@ body {
 
   <div id="view-guide" class="view">
     <div class="guide-section">
-      <div class="guide-section-title"><i class="ti ti-rocket"></i> Configuración en Microsoft Planner</div>
-
-      <div class="step-row"><div class="step-num">1</div><div class="step-body">Abre <strong>Microsoft Planner</strong> en teams.microsoft.com → Planes → Nuevo plan</div></div>
-      <div class="step-row"><div class="step-num">2</div><div class="step-body">Crea un plan por feria en un grupo de Teams llamado <strong>Trade Shows 2026</strong>, con los nombres exactos:</div></div>
+      <div class="guide-section-title"><i class="ti ti-rocket"></i> Setting up in Microsoft Planner</div>
+      <div class="step-row"><div class="step-num">1</div><div class="step-body">Open <strong>Microsoft Planner</strong> at teams.microsoft.com → Plans → New plan</div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-body">Create one plan per trade show in a Teams Group called <strong>Trade Shows 2026</strong>, using these exact names:</div></div>
       <div class="code-block">
-        <span>FAIR</span> – Australian Tourism Exchange – Adelaide – 2026<br>
         <span>FAIR</span> – IPW – Fort Lauderdale – 2026<br>
         <span>FAIR</span> – ITB China – Shanghai – 2026<br>
         <span>FAIR</span> – Arabian Travel Market – Dubai – 2026<br>
@@ -540,156 +213,131 @@ body {
         <span>FAIR</span> – Antalya Tourism Fair – Antalya – 2026<br>
         <span>FAIR</span> – WTM London – London – 2026
       </div>
-      <div class="step-row"><div class="step-num">3</div><div class="step-body">En cada plan crea <strong>3 cubos</strong>: <strong>PRE-SHOW</strong>, <strong>DURING</strong>, <strong>POST-SHOW</strong></div></div>
-      <div class="step-row"><div class="step-num">4</div><div class="step-body">Añade las tareas de cada cubo con el responsable asignado (ver pestaña Tareas) y establece la fecha límite basándote en las fechas de la feria</div></div>
-      <div class="step-row"><div class="step-num">5</div><div class="step-body">Activa notificaciones: <strong>Configuración → Notificaciones → Asignaciones y fechas límite</strong></div></div>
-      <div class="step-row"><div class="step-num">6</div><div class="step-body">Fija el plan en un canal de Teams: <strong>+ Añadir una pestaña → Planner → Usar plan existente</strong></div></div>
-
-      <div class="tip-box"><i class="ti ti-bulb"></i> Usa etiquetas de color: <strong>verde</strong> = hecho, <strong>amarillo</strong> = en progreso, <strong>rojo</strong> = bloqueado</div>
+      <div class="step-row"><div class="step-num">3</div><div class="step-body">In each plan, create <strong>3 buckets</strong>: <strong>PRE-SHOW</strong>, <strong>DURING</strong>, <strong>POST-SHOW</strong></div></div>
+      <div class="step-row"><div class="step-num">4</div><div class="step-body">Add the tasks for each bucket with the assigned person (see Tasks by show tab) and set the due date based on show dates</div></div>
+      <div class="step-row"><div class="step-num">5</div><div class="step-body">Enable notifications: <strong>Settings → Notifications → Task assignments &amp; due dates</strong></div></div>
+      <div class="step-row"><div class="step-num">6</div><div class="step-body">Pin the plan to a Teams channel: <strong>+ Add a tab → Planner → Use existing plan</strong></div></div>
+      <div class="tip-box"><i class="ti ti-bulb"></i> Use colour labels: <strong>green</strong> = done, <strong>yellow</strong> = in progress, <strong>red</strong> = blocked</div>
     </div>
-
     <div class="guide-section">
-      <div class="guide-section-title"><i class="ti ti-clock"></i> Fechas límite recomendadas</div>
+      <div class="guide-section-title"><i class="ti ti-clock"></i> Recommended deadlines</div>
       <div class="deadline-card dl-pre">
         <div class="deadline-icon"><i class="ti ti-calendar-minus"></i></div>
         <div class="deadline-info">
           <div class="deadline-phase">PRE-SHOW</div>
-          <div class="deadline-desc">Fecha límite: 2 semanas antes de la feria</div>
+          <div class="deadline-desc">Deadline: 2 weeks before the show</div>
         </div>
       </div>
       <div class="deadline-card dl-during">
         <div class="deadline-icon"><i class="ti ti-calendar-check"></i></div>
         <div class="deadline-info">
           <div class="deadline-phase">DURING</div>
-          <div class="deadline-desc">Fecha límite: cada día de la feria (tareas diarias recurrentes)</div>
+          <div class="deadline-desc">Deadline: each day of the show (recurring daily tasks)</div>
         </div>
       </div>
       <div class="deadline-card dl-post">
         <div class="deadline-icon"><i class="ti ti-calendar-plus"></i></div>
         <div class="deadline-info">
           <div class="deadline-phase">POST-SHOW</div>
-          <div class="deadline-desc">Fecha límite: el lunes de la semana siguiente al cierre de la feria</div>
+          <div class="deadline-desc">Deadline: Monday of the week after the show closes</div>
         </div>
       </div>
     </div>
   </div>
 
 </div>
-
 <script>
 const today = new Date('2026-05-14');
-
 const fairs = [
-  {id:'ipw',     name:'IPW',                        city:'Fort Lauderdale, USA',    start:'2026-05-17', end:'2026-05-21', emoji:'🇺🇸'},
-  {id:'itbcn',   name:'ITB China',                  city:'Shanghai, China',          start:'2026-05-26', end:'2026-05-28', emoji:'🇨🇳'},
-  {id:'ate',     name:'Australian Tourism Exchange', city:'Adelaide, Australia',     start:'2026-05-27', end:'2026-05-31', emoji:'🇦🇺'},
-  {id:'atm',     name:'Arabian Travel Market',       city:'Dubai, UAE',              start:'2026-08-17', end:'2026-08-20', emoji:'🇦🇪'},
-  {id:'fit',     name:'FIT Latin America',           city:'Buenos Aires, Argentina', start:'2026-09-26', end:'2026-09-29', emoji:'🇦🇷'},
-  {id:'arival',  name:'Arival 360 Spokane',          city:'Spokane, USA',            start:'2026-10-13', end:'2026-10-16', emoji:'🇺🇸'},
-  {id:'ttg',     name:'TTG Travel Experience',       city:'Rimini, Italy',           start:'2026-10-14', end:'2026-10-16', emoji:'🇮🇹'},
-  {id:'itbasia', name:'ITB Asia',                    city:'Singapore',               start:'2026-10-21', end:'2026-10-23', emoji:'🇸🇬'},
-  {id:'cancun',  name:'Cancun Travel Mart',          city:'Cancún, Mexico',          start:'2026-10-21', end:'2026-10-23', emoji:'🇲🇽'},
-  {id:'antalya', name:'Antalya Tourism Fair',        city:'Antalya, Turkey',         start:'2026-10-26', end:'2026-10-28', emoji:'🇹🇷'},
-  {id:'wtm',     name:'WTM London',                  city:'London, UK',              start:'2026-11-03', end:'2026-11-05', emoji:'🇬🇧'},
+  {id:'ipw',     name:'IPW',                  city:'Fort Lauderdale, USA',    start:'2026-05-17', end:'2026-05-21', emoji:'🇺🇸'},
+  {id:'itbcn',   name:'ITB China',             city:'Shanghai, China',         start:'2026-05-26', end:'2026-05-28', emoji:'🇨🇳'},
+  {id:'atm',     name:'Arabian Travel Market', city:'Dubai, UAE',              start:'2026-08-17', end:'2026-08-20', emoji:'🇦🇪'},
+  {id:'fit',     name:'FIT Latin America',     city:'Buenos Aires, Argentina', start:'2026-09-26', end:'2026-09-29', emoji:'🇦🇷'},
+  {id:'arival',  name:'Arival 360 Spokane',    city:'Spokane, USA',            start:'2026-10-13', end:'2026-10-16', emoji:'🇺🇸'},
+  {id:'ttg',     name:'TTG Travel Experience', city:'Rimini, Italy',           start:'2026-10-14', end:'2026-10-16', emoji:'🇮🇹'},
+  {id:'itbasia', name:'ITB Asia',              city:'Singapore',               start:'2026-10-21', end:'2026-10-23', emoji:'🇸🇬'},
+  {id:'cancun',  name:'Cancun Travel Mart',    city:'Cancún, Mexico',          start:'2026-10-21', end:'2026-10-23', emoji:'🇲🇽'},
+  {id:'antalya', name:'Antalya Tourism Fair',  city:'Antalya, Turkey',         start:'2026-10-26', end:'2026-10-28', emoji:'🇹🇷'},
+  {id:'wtm',     name:'WTM London',            city:'London, UK',              start:'2026-11-03', end:'2026-11-05', emoji:'🇬🇧'},
 ];
-
 const tasks = {
   pre:[
-    {text:'Confirmar feria en Excel anual y Salesforce', who:'Marketing'},
-    {text:'Gestionar tickets / credenciales', who:'Marketing'},
-    {text:'Crear Microsoft Planner para la feria', who:'Marketing'},
-    {text:'Enviar comunicación trimestral a asistentes', who:'Marketing'},
-    {text:'Confirmar asistentes (solicitar vía Salesforce)', who:'Zoher'},
-    {text:'Coordinar alineación Ventas–Marketing pre-show', who:'Zoher'},
-    {text:'Solicitar credenciales a asistentes (si aplica)', who:'Louise'},
-    {text:'Extraer lista de expositores del portal', who:'Louise'},
-    {text:'Enviar wish list a cada asistente (con fecha límite)', who:'Louise'},
-    {text:'Crear y distribuir agenda final individual', who:'Louise'},
-    {text:'Preparar push messages (Bienvenida/Agenda/Leads/Cierre)', who:'Marketing'},
-    {text:'Enviar documentación del stand al Director de Ventas (si aplica)', who:'Marketing'},
+    {text:'Confirm show in annual Excel and Salesforce', who:'Marketing'},
+    {text:'Manage tickets / credentials', who:'Marketing'},
+    {text:'Create Microsoft Planner for the show', who:'Marketing'},
+    {text:'Send quarterly communication to attendees', who:'Marketing'},
+    {text:'Confirm attendees (request via Salesforce)', who:'Zoher'},
+    {text:'Coordinate Sales–Marketing alignment pre-show', who:'Zoher'},
+    {text:'Request credentials from attendees (if needed)', who:'Louise'},
+    {text:'Extract exhibitor list from the portal', who:'Louise'},
+    {text:'Send wish list to each attendee (with deadline)', who:'Louise'},
+    {text:'Create and distribute individual final agenda', who:'Louise'},
+    {text:'Prepare push messages (Welcome / Agenda / Leads / Close)', who:'Marketing'},
+    {text:'Send stand documentation to Sales Director (if applicable)', who:'Marketing'},
   ],
   durante:[
-    {text:'Crear grupo de WhatsApp "FAIR – [Nombre] – [Ciudad] – 2026"', who:'Zoher + Marketing'},
-    {text:'Enviar Push 0 — Bienvenida al grupo', who:'Marketing'},
-    {text:'Enviar Push 1 — Agenda al grupo', who:'Marketing'},
-    {text:'Subir leads a Salesforce con rating Cold/Warm/Hot', who:'Asistentes'},
-    {text:'Enviar Push 3 — Recordatorio diario de leads', who:'Marketing'},
-    {text:'Enviar 2–3 fotos/vídeos por día para LinkedIn (Push 2)', who:'Asistentes'},
-    {text:'Soporte y escalada de incidencias on-site', who:'Miguel Ángel'},
-    {text:'Soporte a clientes Juniper en la feria', who:'Manon'},
-    {text:'Canal de temas de viaje en el grupo', who:'Carolina'},
-    {text:'Enviar Push 5 — Cierre al final de la feria', who:'Marketing'},
+    {text:'Create WhatsApp group "FAIR – [Name] – [City] – 2026"', who:'Zoher + Marketing'},
+    {text:'Send Push 0 — Welcome to the group', who:'Marketing'},
+    {text:'Send Push 1 — Agenda to the group', who:'Marketing'},
+    {text:'Upload leads to Salesforce with rating Cold / Warm / Hot', who:'Attendees'},
+    {text:'Send Push 3 — Daily leads reminder', who:'Marketing'},
+    {text:'Send 2–3 photos/videos per day for LinkedIn (Push 2)', who:'Attendees'},
+    {text:'Support and escalation of on-site issues', who:'Miguel Ángel'},
+    {text:'Support for Juniper clients at the show', who:'Manon'},
+    {text:'Channel travel topics in the group', who:'Carolina'},
+    {text:'Send Push 5 — Close at end of show', who:'Marketing'},
   ],
   post:[
-    {text:'Revisar leads subidos y conciliar con informe', who:'Zoher'},
-    {text:'Validar que todos los leads estén creados en Salesforce', who:'Zoher'},
-    {text:'Leads calientes → contacto manual el lunes siguiente', who:'Zoher'},
-    {text:'Activar Journey automático para leads no calientes', who:'Zoher'},
-    {text:'Aviso interno a Ventas & Marketing (5 días post-show)', who:'Zoher'},
-    {text:'Gestionar leads respondiendo al Journey (Hot/Cold)', who:'Rodrigo (SDA)'},
-    {text:'Redactar informe post-show (KPIs + gráficos)', who:'Marketing + Zoher'},
-    {text:'Registrar gastos en PayHawk (campo "Show ID")', who:'Asistentes'},
-    {text:'Revisión de retorno: conversión a oportunidades', who:'Zoher + Juan'},
+    {text:'Review uploaded leads and reconcile with report', who:'Zoher'},
+    {text:'Validate all leads are created in Salesforce', who:'Zoher'},
+    {text:'Hot leads → manual outreach the following Monday', who:'Zoher'},
+    {text:'Trigger automatic Journey for non-hot leads', who:'Zoher'},
+    {text:'Internal notice to Sales & Marketing (5 days post-show)', who:'Zoher'},
+    {text:'Manage leads responding to Journey (Hot / Cold)', who:'Rodrigo (SDA)'},
+    {text:'Write post-show report (KPIs + charts)', who:'Marketing + Zoher'},
+    {text:'Log expenses in PayHawk (field "Show ID")', who:'Attendees'},
+    {text:'Return review: conversion to opportunities', who:'Zoher + Juan'},
   ]
 };
-
-let checkedTasks = {};
-let checkedCount = 0;
-
+let checkedTasks = {}, checkedCount = 0;
 function getStatus(f) {
   const s = new Date(f.start), e = new Date(f.end);
-  if (e < today) return { label:'Pasada', cls:'badge-past', sClass:'status-past' };
+  if (e < today) return {label:'Past', cls:'badge-past', sClass:'status-past'};
   const diff = (s - today) / (1000*60*60*24);
-  if (diff <= 30) return { label:'Próxima', cls:'badge-soon', sClass:'status-soon' };
-  return { label:'Planificada', cls:'badge-upcoming', sClass:'status-upcoming' };
+  if (diff <= 30) return {label:'Coming up', cls:'badge-soon', sClass:'status-soon'};
+  return {label:'Planned', cls:'badge-upcoming', sClass:'status-upcoming'};
 }
-
 function daysUntil(dateStr) {
   const d = new Date(dateStr);
   const diff = Math.ceil((d - today) / (1000*60*60*24));
   if (diff < 0) return null;
-  if (diff === 0) return 'Hoy';
-  if (diff === 1) return 'Mañana';
-  if (diff <= 7) return `En ${diff} días`;
-  if (diff <= 30) return `En ${diff} días`;
-  const w = Math.round(diff / 7);
+  if (diff === 0) return 'Today';
+  if (diff === 1) return 'Tomorrow';
+  if (diff <= 30) return `In ${diff} days`;
   const m = Math.round(diff / 30);
-  if (m >= 2) return `En ${m} meses`;
-  return `En ${w} sem.`;
+  if (m >= 2) return `In ${m} months`;
+  return `In ${Math.round(diff/7)} wks`;
 }
-
-function fmtDate(d) {
-  return new Date(d).toLocaleDateString('es-ES', {day:'numeric', month:'short'});
-}
-
+function fmtDate(d) { return new Date(d).toLocaleDateString('en-GB', {day:'numeric', month:'short'}); }
 function switchTab(id) {
-  document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    b.classList.toggle('active', ['calendar','planner','guide'][i] === id);
-  });
+  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', ['calendar','planner','guide'][i]===id));
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('view-' + id).classList.add('active');
-  if (id === 'planner') renderTasks();
+  document.getElementById('view-'+id).classList.add('active');
+  if (id==='planner') renderTasks();
 }
-
-function goToFair(id) {
-  switchTab('planner');
-  document.getElementById('fair-select').value = id;
-  renderTasks();
-}
-
+function goToFair(id) { switchTab('planner'); document.getElementById('fair-select').value=id; renderTasks(); }
 function renderCalendar() {
   const months = {};
   fairs.forEach(f => {
-    const key = new Date(f.start).toLocaleDateString('es-ES', {month:'long', year:'numeric'});
-    if (!months[key]) months[key] = [];
+    const key = new Date(f.start).toLocaleDateString('en-GB', {month:'long', year:'numeric'});
+    if (!months[key]) months[key]=[];
     months[key].push(f);
   });
-  let html = '';
+  let html='';
   Object.keys(months).forEach(m => {
     html += `<div class="month-label">${m}</div>`;
-    months[m].forEach((f, i) => {
-      const st = getStatus(f);
-      const cd = daysUntil(f.start);
+    months[m].forEach((f,i) => {
+      const st=getStatus(f), cd=daysUntil(f.start);
       html += `<div class="fair-card ${st.sClass}" style="animation-delay:${i*30}ms" onclick="goToFair('${f.id}')">
         <div class="fair-info">
           <div class="fair-name">${f.emoji} ${f.name}</div>
@@ -700,91 +348,60 @@ function renderCalendar() {
         </div>
         <div class="fair-right">
           <span class="badge ${st.cls}"><span class="badge-dot"></span>${st.label}</span>
-          ${cd ? `<span class="countdown ${st.cls === 'badge-soon' ? 'soon' : ''}">${cd}</span>` : ''}
+          ${cd ? `<span class="countdown ${st.cls==='badge-soon'?'soon':''}">${cd}</span>` : ''}
           <span class="arrow-hint"><i class="ti ti-arrow-right"></i></span>
         </div>
       </div>`;
     });
   });
-  document.getElementById('calendar-content').innerHTML = html;
+  document.getElementById('calendar-content').innerHTML=html;
 }
-
 function renderSelect() {
-  const sel = document.getElementById('fair-select');
-  fairs.forEach(f => {
-    const o = document.createElement('option');
-    o.value = f.id;
-    o.textContent = `${f.emoji} ${f.name} · ${fmtDate(f.start)}`;
-    sel.appendChild(o);
-  });
+  const sel=document.getElementById('fair-select');
+  fairs.forEach(f => { const o=document.createElement('option'); o.value=f.id; o.textContent=`${f.emoji} ${f.name} · ${fmtDate(f.start)}`; sel.appendChild(o); });
 }
-
 function toggleTask(fairId, phase, idx) {
-  const key = `${fairId}-${phase}-${idx}`;
-  checkedTasks[key] = !checkedTasks[key];
+  const key=`${fairId}-${phase}-${idx}`;
+  checkedTasks[key]=!checkedTasks[key];
   if (checkedTasks[key]) checkedCount++; else checkedCount--;
-  document.getElementById('pill-checked').textContent = checkedCount;
+  document.getElementById('pill-checked').textContent=checkedCount;
   renderTasks(true);
 }
-
 function renderTasks(preserveScroll) {
-  const val = document.getElementById('fair-select').value;
-  const fair = fairs.find(f => f.id === val);
+  const val=document.getElementById('fair-select').value;
+  const fair=fairs.find(f=>f.id===val);
   if (!fair) return;
-
-  const phases = [
-    { key:'pre', label:'PRE-SHOW', icon:'ti-clipboard-list', cls:'b-pre' },
-    { key:'durante', label:'DURANTE LA FERIA', icon:'ti-activity', cls:'b-during' },
-    { key:'post', label:'POST-SHOW', icon:'ti-chart-bar', cls:'b-post' },
+  const phases=[
+    {key:'pre',label:'PRE-SHOW',icon:'ti-clipboard-list',cls:'b-pre'},
+    {key:'durante',label:'DURING THE SHOW',icon:'ti-activity',cls:'b-during'},
+    {key:'post',label:'POST-SHOW',icon:'ti-chart-bar',cls:'b-post'},
   ];
-
-  const total = phases.reduce((s, p) => s + tasks[p.key].length, 0);
-  let done = phases.reduce((s, p) => s + tasks[p.key].filter((_, i) => checkedTasks[`${val}-${p.key}-${i}`]).length, 0);
-  const pct = Math.round((done / total) * 100);
-
-  let html = `<div class="show-header-card">
+  const total=phases.reduce((s,p)=>s+tasks[p.key].length,0);
+  const done=phases.reduce((s,p)=>s+tasks[p.key].filter((_,i)=>checkedTasks[`${val}-${p.key}-${i}`]).length,0);
+  const pct=Math.round((done/total)*100);
+  let html=`<div class="show-header-card">
     <div class="show-header-emoji">${fair.emoji}</div>
     <div class="show-header-info">
       <div class="show-header-name">${fair.name}</div>
-      <div class="show-header-sub">
-        <span><i class="ti ti-map-pin"></i>${fair.city}</span>
-        <span><i class="ti ti-calendar"></i>${fmtDate(fair.start)} – ${fmtDate(fair.end)}</span>
-      </div>
+      <div class="show-header-sub"><span><i class="ti ti-map-pin"></i>${fair.city}</span><span><i class="ti ti-calendar"></i>${fmtDate(fair.start)} – ${fmtDate(fair.end)}</span></div>
     </div>
   </div>
   <div class="progress-wrap">
-    <div class="progress-label"><span>Progreso de tareas</span><strong>${done} / ${total} — ${pct}%</strong></div>
+    <div class="progress-label"><span>Task progress</span><strong>${done} / ${total} — ${pct}%</strong></div>
     <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
   </div>`;
-
   phases.forEach(p => {
-    const list = tasks[p.key];
-    html += `<div class="bucket ${p.cls}">
-      <div class="bucket-head">
-        <div class="bucket-icon"><i class="ti ${p.icon}"></i></div>
-        <span class="bucket-label">${p.label}</span>
-        <span class="bucket-count-badge">${list.length}</span>
-      </div>`;
-    list.forEach((t, i) => {
-      const k = `${val}-${p.key}-${i}`;
-      const ck = checkedTasks[k] ? 'checked' : '';
-      html += `<div class="task-row ${ck ? 'done' : ''}">
-        <div class="task-check ${ck}" onclick="toggleTask('${val}','${p.key}',${i})"></div>
-        <div class="task-body">
-          <div class="task-text">${t.text}</div>
-          <span class="assignee-chip"><i class="ti ti-user"></i>${t.who}</span>
-        </div>
-      </div>`;
+    const list=tasks[p.key];
+    html+=`<div class="bucket ${p.cls}"><div class="bucket-head"><div class="bucket-icon"><i class="ti ${p.icon}"></i></div><span class="bucket-label">${p.label}</span><span class="bucket-count-badge">${list.length}</span></div>`;
+    list.forEach((t,i) => {
+      const k=`${val}-${p.key}-${i}`, ck=checkedTasks[k]?'checked':'';
+      html+=`<div class="task-row ${ck?'done':''}"><div class="task-check ${ck}" onclick="toggleTask('${val}','${p.key}',${i})"></div><div class="task-body"><div class="task-text">${t.text}</div><span class="assignee-chip"><i class="ti ti-user"></i>${t.who}</span></div></div>`;
     });
-    html += '</div>';
+    html+='</div>';
   });
-
-  document.getElementById('tasks-content').innerHTML = html;
+  document.getElementById('tasks-content').innerHTML=html;
 }
-
-renderCalendar();
-renderSelect();
-renderTasks();
+renderCalendar(); renderSelect(); renderTasks();
 </script>
 </body>
 </html>
