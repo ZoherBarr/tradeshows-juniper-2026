@@ -1,226 +1,790 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade Shows Juniper 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);color:var(--color-text-primary)}
-.header{padding:1.5rem 0 1rem}
-.header h1{font-size:20px;font-weight:500;margin-bottom:4px}
-.header p{font-size:13px;color:var(--color-text-secondary)}
-.tabs{display:flex;gap:4px;margin-bottom:1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:0}
-.tab{padding:8px 14px;font-size:13px;font-weight:400;cursor:pointer;border:none;background:none;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-1px}
-.tab.active{color:var(--color-text-primary);font-weight:500;border-bottom:2px solid var(--color-text-primary)}
-.tab:hover:not(.active){color:var(--color-text-primary)}
-.view{display:none}.view.active{display:block}
-.month-group{margin-bottom:1.5rem}
-.month-label{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
-.fair-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:border-color 0.15s}
-.fair-card:hover{border-color:var(--color-border-primary)}
-.fair-name{font-size:14px;font-weight:500}
-.fair-meta{font-size:12px;color:var(--color-text-secondary);margin-top:3px;display:flex;gap:10px;flex-wrap:wrap}
-.badge{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;white-space:nowrap}
-.badge-past{background:#F1EFE8;color:#5F5E5A}
-.badge-soon{background:#EEEDFE;color:#534AB7}
-.badge-upcoming{background:#E1F5EE;color:#0F6E56}
-.fair-selector{margin-bottom:1rem}
-.fair-selector label{font-size:12px;color:var(--color-text-secondary);display:block;margin-bottom:4px}
-.fair-selector select{font-size:13px;padding:6px 10px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-primary);color:var(--color-text-primary);width:100%}
-.bucket{margin-bottom:1.5rem}
-.bucket-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.bucket-dot{width:8px;height:8px;border-radius:50%}
-.bucket-title{font-size:14px;font-weight:500}
-.bucket-count{font-size:12px;color:var(--color-text-secondary)}
-.task-row{display:flex;align-items:start;gap:8px;padding:8px 12px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);margin-bottom:4px}
-.task-check{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:1px;cursor:pointer}
-.task-text{font-size:13px;flex:1}
-.task-assignee{font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:1px 6px;border-radius:8px;white-space:nowrap;margin-top:2px}
-.task-col{display:flex;flex-direction:column;flex:1;gap:2px}
-.guide-section{margin-bottom:1.5rem}
-.guide-section h3{font-size:14px;font-weight:500;margin-bottom:8px}
-.step{display:flex;gap:10px;margin-bottom:8px;align-items:start}
-.step-num{width:22px;height:22px;border-radius:50%;background:#EEEDFE;color:#534AB7;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.step-text{font-size:13px;padding-top:2px;color:var(--color-text-primary)}
-.step-text strong{font-weight:500}
-.code-block{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:12px;font-family:var(--font-mono);line-height:1.6;margin:6px 0 10px;color:var(--color-text-primary)}
-.tip{background:#EEEDFE;border-radius:var(--border-radius-md);padding:8px 12px;font-size:12px;color:#534AB7;margin-top:8px}
+:root {
+  --bg: #F6F5F0;
+  --surface: #FFFFFF;
+  --surface2: #F0EFE9;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.14);
+  --text: #1A1916;
+  --text-muted: #6B6A64;
+  --text-faint: #9B9A94;
+  --accent: #4A3FD4;
+  --accent-bg: #EEEDFD;
+  --accent-text: #2D249E;
+  --green: #0F6E56;
+  --green-bg: #E1F5EE;
+  --green-text: #0A4D3C;
+  --amber: #92570A;
+  --amber-bg: #FEF3DC;
+  --amber-text: #7A470A;
+  --gray-bg: #EEECEA;
+  --gray-text: #4A4A46;
+  --coral: #C94020;
+  --coral-bg: #FAECE7;
+  --coral-text: #9A2E14;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 0 0 0.5px rgba(0,0,0,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+.shell {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* HEADER */
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.topbar-left h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+.topbar-left p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.stats-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.stat-pill .val { color: var(--text); font-weight: 600; }
+
+/* TABS */
+.tabs-bar {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); background: var(--surface2); }
+.tab-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.tab-btn i { font-size: 15px; }
+
+/* VIEWS */
+.view { display: none; }
+.view.active { display: block; }
+
+/* MONTH LABEL */
+.month-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 1.5rem 0 8px;
+}
+.month-label:first-child { margin-top: 0; }
+
+/* FAIR CARDS */
+.fair-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.fair-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74,63,212,0.08);
+  transform: translateY(-1px);
+}
+.fair-card.status-past { opacity: 0.6; }
+.fair-card.status-past:hover { opacity: 1; }
+.fair-info { flex: 1; min-width: 0; }
+.fair-name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fair-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.fair-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.fair-meta i { font-size: 12px; }
+.fair-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.arrow-hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: color 0.15s;
+}
+.fair-card:hover .arrow-hint { color: var(--accent); }
+
+/* BADGES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.badge-past { background: var(--gray-bg); color: var(--gray-text); }
+.badge-soon { background: var(--accent-bg); color: var(--accent-text); }
+.badge-upcoming { background: var(--green-bg); color: var(--green-text); }
+.badge-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.badge-soon .badge-dot { background: var(--accent); }
+.badge-upcoming .badge-dot { background: var(--green); }
+.badge-past .badge-dot { background: var(--gray-text); }
+
+/* COUNTDOWN */
+.countdown {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.countdown.soon { color: var(--accent-text); }
+
+/* TASKS VIEW */
+.show-selector-wrap {
+  margin-bottom: 1.25rem;
+}
+.show-selector-wrap label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+.show-selector-wrap select {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B6A64' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+.show-selector-wrap select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,63,212,0.1); }
+.show-header-card {
+  background: var(--accent-bg);
+  border: 0.5px solid rgba(74,63,212,0.18);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.show-header-emoji { font-size: 28px; line-height: 1; }
+.show-header-info { flex: 1; }
+.show-header-name { font-size: 16px; font-weight: 600; color: var(--accent-text); letter-spacing: -0.2px; }
+.show-header-sub { font-size: 12px; color: var(--accent); margin-top: 2px; display: flex; align-items: center; gap: 8px; }
+.show-header-sub i { font-size: 12px; }
+
+/* BUCKETS */
+.bucket { margin-bottom: 1.5rem; }
+.bucket-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 2px;
+  margin-bottom: 8px;
+}
+.bucket-icon {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-xs);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.bucket-icon i { font-size: 15px; }
+.b-pre .bucket-icon { background: var(--accent-bg); color: var(--accent); }
+.b-during .bucket-icon { background: var(--green-bg); color: var(--green); }
+.b-post .bucket-icon { background: var(--coral-bg); color: var(--coral); }
+.bucket-label { font-size: 13px; font-weight: 600; letter-spacing: 0.01em; }
+.b-pre .bucket-label { color: var(--accent-text); }
+.b-during .bucket-label { color: var(--green-text); }
+.b-post .bucket-label { color: var(--coral-text); }
+.bucket-count-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+.b-pre .bucket-count-badge { background: var(--accent-bg); color: var(--accent); }
+.b-during .bucket-count-badge { background: var(--green-bg); color: var(--green); }
+.b-post .bucket-count-badge { background: var(--coral-bg); color: var(--coral); }
+
+/* TASKS */
+.task-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  transition: border-color 0.12s;
+}
+.task-row:hover { border-color: var(--border-strong); }
+.task-check {
+  width: 17px; height: 17px;
+  border-radius: 5px;
+  border: 1.5px solid var(--border-strong);
+  flex-shrink: 0;
+  margin-top: 1px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.task-check:hover { border-color: var(--accent); background: var(--accent-bg); }
+.task-check.checked { background: var(--accent); border-color: var(--accent); }
+.task-check.checked::after {
+  content: '';
+  width: 9px; height: 6px;
+  border-left: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+  display: block;
+}
+.task-body { flex: 1; }
+.task-text {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  transition: color 0.15s;
+}
+.task-row.done .task-text {
+  color: var(--text-faint);
+  text-decoration: line-through;
+}
+.assignee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--surface2);
+  color: var(--text-muted);
+  border: 0.5px solid var(--border);
+}
+.assignee-chip i { font-size: 11px; }
+
+/* GUIDE */
+.guide-section { margin-bottom: 2rem; }
+.guide-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.guide-section-title i { font-size: 16px; color: var(--accent); }
+.step-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.step-num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-body { flex: 1; font-size: 13px; line-height: 1.55; padding-top: 3px; color: var(--text-muted); }
+.step-body strong { color: var(--text); font-weight: 600; }
+.code-block {
+  background: #1A1916;
+  color: #D4D2C8;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  line-height: 1.7;
+  margin: 8px 0 12px;
+}
+.code-block span { color: #A89FE8; }
+.tip-box {
+  background: var(--accent-bg);
+  border: 0.5px solid rgba(74,63,212,0.2);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-xs);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--accent-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 6px;
+}
+.tip-box i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.deadline-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.deadline-icon {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-xs);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.deadline-icon i { font-size: 16px; }
+.dl-pre .deadline-icon { background: var(--accent-bg); color: var(--accent); }
+.dl-during .deadline-icon { background: var(--green-bg); color: var(--green); }
+.dl-post .deadline-icon { background: var(--coral-bg); color: var(--coral); }
+.deadline-info { flex: 1; }
+.deadline-phase { font-size: 13px; font-weight: 600; }
+.deadline-desc { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+/* PROGRESS BAR */
+.progress-wrap { margin: 1.5rem 0 1rem; }
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.progress-label strong { color: var(--text); }
+.progress-bar {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+  border: 0.5px solid var(--border);
+}
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fair-card, .task-row {
+  animation: fadeUp 0.2s ease both;
+}
 </style>
+</head>
+<body>
+<div class="shell">
 
-<div class="header">
-  <h1><i class="ti ti-layout-kanban" style="font-size:18px;vertical-align:-2px;margin-right:6px"></i>Trade Shows Juniper 2026 — Microsoft Planner Structure</h1>
-  <p>11 trade shows · 3 phases per show · Assigned by person</p>
-</div>
+  <div class="topbar">
+    <div class="topbar-left">
+      <h1>Trade Shows Juniper 2026</h1>
+      <p>Estructura Microsoft Planner · Asignaciones por persona</p>
+      <div class="stats-pills">
+        <div class="stat-pill"><i class="ti ti-calendar-event"></i><span class="val">11</span> ferias</div>
+        <div class="stat-pill"><i class="ti ti-layout-list"></i><span class="val">3</span> fases por feria</div>
+        <div class="stat-pill"><i class="ti ti-check"></i><span class="val" id="pill-checked">0</span> tareas completadas</div>
+      </div>
+    </div>
+  </div>
 
-<div class="tabs">
-  <button class="tab active" onclick="switchTab('calendar')"><i class="ti ti-calendar" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>Calendar</button>
-  <button class="tab" onclick="switchTab('planner')"><i class="ti ti-checklist" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>Tasks by show</button>
-  <button class="tab" onclick="switchTab('guide')"><i class="ti ti-book" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>Planner Guide</button>
-</div>
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="switchTab('calendar')">
+      <i class="ti ti-calendar"></i> Calendario
+    </button>
+    <button class="tab-btn" onclick="switchTab('planner')">
+      <i class="ti ti-checklist"></i> Tareas por feria
+    </button>
+    <button class="tab-btn" onclick="switchTab('guide')">
+      <i class="ti ti-book-2"></i> Guía Planner
+    </button>
+  </div>
 
-<div id="view-calendar" class="view active"><div id="calendar-content"></div></div>
-<div id="view-planner" class="view">
-  <div class="fair-selector">
-    <label>Select a trade show to view its tasks</label>
-    <select id="fair-select" onchange="renderTasks()"></select>
+  <div id="view-calendar" class="view active">
+    <div id="calendar-content"></div>
   </div>
-  <div id="tasks-content"></div>
-</div>
-<div id="view-guide" class="view">
-  <div class="guide-section">
-    <h3>How to set this up in Microsoft Planner</h3>
-    <div class="step"><div class="step-num">1</div><div class="step-text">Open <strong>Microsoft Planner</strong> at teams.microsoft.com → Plans → New plan</div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-text">Create one plan per trade show using the exact names below, grouped in a Teams Group called <strong>Trade Shows 2026</strong></div></div>
-    <div class="code-block">FAIR – Australian Tourism Exchange – Adelaide – 2026<br>FAIR – IPW – Fort Lauderdale – 2026<br>FAIR – ITB China – Shanghai – 2026<br>FAIR – Arabian Travel Market – Dubai – 2026<br>FAIR – FIT Latin America – Buenos Aires – 2026<br>FAIR – Arival 360 – Spokane – 2026<br>FAIR – TTG Travel Experience – Rimini – 2026<br>FAIR – ITB Asia – Singapore – 2026<br>FAIR – Cancun Travel Mart – Cancún – 2026<br>FAIR – Antalya Tourism Fair – Antalya – 2026<br>FAIR – WTM London – London – 2026</div>
-    <div class="step"><div class="step-num">3</div><div class="step-text">In each plan create <strong>3 buckets</strong>: <em>PRE-SHOW</em>, <em>DURING</em>, <em>POST-SHOW</em></div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-text">Add the tasks for each bucket with the assigned person (see Tasks by show tab) and set the due date based on the show dates</div></div>
-    <div class="step"><div class="step-num">5</div><div class="step-text">Enable notifications in each plan: <strong>Settings → Notifications → Task assignments &amp; due dates</strong></div></div>
-    <div class="step"><div class="step-num">6</div><div class="step-text">Pin the plan to a Teams channel: <strong>+ Add a tab → Planner → Use existing plan</strong></div></div>
-    <div class="tip"><i class="ti ti-bulb" style="font-size:13px;vertical-align:-1px;margin-right:4px"></i>Use colour labels: green = done, yellow = in progress, red = blocked</div>
+
+  <div id="view-planner" class="view">
+    <div class="show-selector-wrap">
+      <label>Selecciona una feria</label>
+      <select id="fair-select" onchange="renderTasks()"></select>
+    </div>
+    <div id="tasks-content"></div>
   </div>
-  <div class="guide-section">
-    <h3>Recommended deadlines</h3>
-    <div class="task-row"><div class="task-col"><div class="task-text"><strong>PRE-SHOW</strong> — deadline: 2 weeks before the show</div></div></div>
-    <div class="task-row"><div class="task-col"><div class="task-text"><strong>DURING</strong> — deadline: each day of the show (recurring daily tasks)</div></div></div>
-    <div class="task-row"><div class="task-col"><div class="task-text"><strong>POST-SHOW</strong> — deadline: Monday of the week after the show closes</div></div></div>
+
+  <div id="view-guide" class="view">
+    <div class="guide-section">
+      <div class="guide-section-title"><i class="ti ti-rocket"></i> Configuración en Microsoft Planner</div>
+
+      <div class="step-row"><div class="step-num">1</div><div class="step-body">Abre <strong>Microsoft Planner</strong> en teams.microsoft.com → Planes → Nuevo plan</div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-body">Crea un plan por feria en un grupo de Teams llamado <strong>Trade Shows 2026</strong>, con los nombres exactos:</div></div>
+      <div class="code-block">
+        <span>FAIR</span> – Australian Tourism Exchange – Adelaide – 2026<br>
+        <span>FAIR</span> – IPW – Fort Lauderdale – 2026<br>
+        <span>FAIR</span> – ITB China – Shanghai – 2026<br>
+        <span>FAIR</span> – Arabian Travel Market – Dubai – 2026<br>
+        <span>FAIR</span> – FIT Latin America – Buenos Aires – 2026<br>
+        <span>FAIR</span> – Arival 360 – Spokane – 2026<br>
+        <span>FAIR</span> – TTG Travel Experience – Rimini – 2026<br>
+        <span>FAIR</span> – ITB Asia – Singapore – 2026<br>
+        <span>FAIR</span> – Cancun Travel Mart – Cancún – 2026<br>
+        <span>FAIR</span> – Antalya Tourism Fair – Antalya – 2026<br>
+        <span>FAIR</span> – WTM London – London – 2026
+      </div>
+      <div class="step-row"><div class="step-num">3</div><div class="step-body">En cada plan crea <strong>3 cubos</strong>: <strong>PRE-SHOW</strong>, <strong>DURING</strong>, <strong>POST-SHOW</strong></div></div>
+      <div class="step-row"><div class="step-num">4</div><div class="step-body">Añade las tareas de cada cubo con el responsable asignado (ver pestaña Tareas) y establece la fecha límite basándote en las fechas de la feria</div></div>
+      <div class="step-row"><div class="step-num">5</div><div class="step-body">Activa notificaciones: <strong>Configuración → Notificaciones → Asignaciones y fechas límite</strong></div></div>
+      <div class="step-row"><div class="step-num">6</div><div class="step-body">Fija el plan en un canal de Teams: <strong>+ Añadir una pestaña → Planner → Usar plan existente</strong></div></div>
+
+      <div class="tip-box"><i class="ti ti-bulb"></i> Usa etiquetas de color: <strong>verde</strong> = hecho, <strong>amarillo</strong> = en progreso, <strong>rojo</strong> = bloqueado</div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-section-title"><i class="ti ti-clock"></i> Fechas límite recomendadas</div>
+      <div class="deadline-card dl-pre">
+        <div class="deadline-icon"><i class="ti ti-calendar-minus"></i></div>
+        <div class="deadline-info">
+          <div class="deadline-phase">PRE-SHOW</div>
+          <div class="deadline-desc">Fecha límite: 2 semanas antes de la feria</div>
+        </div>
+      </div>
+      <div class="deadline-card dl-during">
+        <div class="deadline-icon"><i class="ti ti-calendar-check"></i></div>
+        <div class="deadline-info">
+          <div class="deadline-phase">DURING</div>
+          <div class="deadline-desc">Fecha límite: cada día de la feria (tareas diarias recurrentes)</div>
+        </div>
+      </div>
+      <div class="deadline-card dl-post">
+        <div class="deadline-icon"><i class="ti ti-calendar-plus"></i></div>
+        <div class="deadline-info">
+          <div class="deadline-phase">POST-SHOW</div>
+          <div class="deadline-desc">Fecha límite: el lunes de la semana siguiente al cierre de la feria</div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </div>
 
 <script>
 const today = new Date('2026-05-14');
 
 const fairs = [
-  {id:'ipw',     name:'IPW',                        city:'Fort Lauderdale, USA',      start:'2026-05-17', end:'2026-05-21', emoji:'🇺🇸'},
-  {id:'itbcn',   name:'ITB China',                  city:'Shanghai, China',            start:'2026-05-26', end:'2026-05-28', emoji:'🇨🇳'},
-  {id:'ate',     name:'Australian Tourism Exchange', city:'Adelaide, Australia',       start:'2026-05-27', end:'2026-05-31', emoji:'🇦🇺'},
-  {id:'atm',     name:'Arabian Travel Market',       city:'Dubai, UAE',                start:'2026-08-17', end:'2026-08-20', emoji:'🇦🇪'},
-  {id:'fit',     name:'FIT Latin America',           city:'Buenos Aires, Argentina',   start:'2026-09-26', end:'2026-09-29', emoji:'🇦🇷'},
-  {id:'arival',  name:'Arival 360 Spokane',          city:'Spokane, USA',              start:'2026-10-13', end:'2026-10-16', emoji:'🇺🇸'},
-  {id:'ttg',     name:'TTG Travel Experience',       city:'Rimini, Italy',             start:'2026-10-14', end:'2026-10-16', emoji:'🇮🇹'},
-  {id:'itbasia', name:'ITB Asia',                    city:'Singapore',                 start:'2026-10-21', end:'2026-10-23', emoji:'🇸🇬'},
-  {id:'cancun',  name:'Cancun Travel Mart',          city:'Cancún, Mexico',            start:'2026-10-21', end:'2026-10-23', emoji:'🇲🇽'},
-  {id:'antalya', name:'Antalya Tourism Fair',        city:'Antalya, Turkey',           start:'2026-10-26', end:'2026-10-28', emoji:'🇹🇷'},
-  {id:'wtm',     name:'WTM London',                  city:'London, UK',                start:'2026-11-03', end:'2026-11-05', emoji:'🇬🇧'},
+  {id:'ipw',     name:'IPW',                        city:'Fort Lauderdale, USA',    start:'2026-05-17', end:'2026-05-21', emoji:'🇺🇸'},
+  {id:'itbcn',   name:'ITB China',                  city:'Shanghai, China',          start:'2026-05-26', end:'2026-05-28', emoji:'🇨🇳'},
+  {id:'ate',     name:'Australian Tourism Exchange', city:'Adelaide, Australia',     start:'2026-05-27', end:'2026-05-31', emoji:'🇦🇺'},
+  {id:'atm',     name:'Arabian Travel Market',       city:'Dubai, UAE',              start:'2026-08-17', end:'2026-08-20', emoji:'🇦🇪'},
+  {id:'fit',     name:'FIT Latin America',           city:'Buenos Aires, Argentina', start:'2026-09-26', end:'2026-09-29', emoji:'🇦🇷'},
+  {id:'arival',  name:'Arival 360 Spokane',          city:'Spokane, USA',            start:'2026-10-13', end:'2026-10-16', emoji:'🇺🇸'},
+  {id:'ttg',     name:'TTG Travel Experience',       city:'Rimini, Italy',           start:'2026-10-14', end:'2026-10-16', emoji:'🇮🇹'},
+  {id:'itbasia', name:'ITB Asia',                    city:'Singapore',               start:'2026-10-21', end:'2026-10-23', emoji:'🇸🇬'},
+  {id:'cancun',  name:'Cancun Travel Mart',          city:'Cancún, Mexico',          start:'2026-10-21', end:'2026-10-23', emoji:'🇲🇽'},
+  {id:'antalya', name:'Antalya Tourism Fair',        city:'Antalya, Turkey',         start:'2026-10-26', end:'2026-10-28', emoji:'🇹🇷'},
+  {id:'wtm',     name:'WTM London',                  city:'London, UK',              start:'2026-11-03', end:'2026-11-05', emoji:'🇬🇧'},
 ];
 
 const tasks = {
   pre:[
-    {text:'Confirm show in annual Excel and Salesforce', who:'Marketing'},
-    {text:'Manage tickets / credentials', who:'Marketing'},
-    {text:'Create Microsoft Planner for the show', who:'Marketing'},
-    {text:'Send quarter communication to attendees', who:'Marketing'},
-    {text:'Confirm attendees (request via Salesforce)', who:'Zoher'},
-    {text:'Coordinate Sales–Marketing alignment pre-show', who:'Zoher'},
-    {text:'Request credentials from attendees (if needed)', who:'Louise'},
-    {text:'Extract exhibitor list from the portal', who:'Louise'},
-    {text:'Send wish list to each attendee (with deadline)', who:'Louise'},
-    {text:'Create and distribute individual final agenda', who:'Louise'},
-    {text:'Prepare push messages (Welcome/Agenda/Leads/Close)', who:'Marketing'},
-    {text:'Send stand documentation to Sales Director (if applicable)', who:'Marketing'},
+    {text:'Confirmar feria en Excel anual y Salesforce', who:'Marketing'},
+    {text:'Gestionar tickets / credenciales', who:'Marketing'},
+    {text:'Crear Microsoft Planner para la feria', who:'Marketing'},
+    {text:'Enviar comunicación trimestral a asistentes', who:'Marketing'},
+    {text:'Confirmar asistentes (solicitar vía Salesforce)', who:'Zoher'},
+    {text:'Coordinar alineación Ventas–Marketing pre-show', who:'Zoher'},
+    {text:'Solicitar credenciales a asistentes (si aplica)', who:'Louise'},
+    {text:'Extraer lista de expositores del portal', who:'Louise'},
+    {text:'Enviar wish list a cada asistente (con fecha límite)', who:'Louise'},
+    {text:'Crear y distribuir agenda final individual', who:'Louise'},
+    {text:'Preparar push messages (Bienvenida/Agenda/Leads/Cierre)', who:'Marketing'},
+    {text:'Enviar documentación del stand al Director de Ventas (si aplica)', who:'Marketing'},
   ],
   durante:[
-    {text:'Create WhatsApp group "FAIR – [Name] – [City] – 2026"', who:'Zoher + Marketing'},
-    {text:'Send Push 0 — Welcome to the group', who:'Marketing'},
-    {text:'Send Push 1 — Agenda to the group', who:'Marketing'},
-    {text:'Upload leads to Salesforce with rating Cold/Warm/Hot', who:'Attendees'},
-    {text:'Send Push 3 — Daily leads reminder', who:'Marketing'},
-    {text:'Send 2–3 photos/videos per day for LinkedIn (Push 2)', who:'Attendees'},
-    {text:'Support and escalation of on-site issues', who:'Miguel Ángel'},
-    {text:'Support for Juniper clients at the show', who:'Manon'},
-    {text:'Channel travel topics in the group', who:'Carolina'},
-    {text:'Send Push 5 — Close at end of show', who:'Marketing'},
+    {text:'Crear grupo de WhatsApp "FAIR – [Nombre] – [Ciudad] – 2026"', who:'Zoher + Marketing'},
+    {text:'Enviar Push 0 — Bienvenida al grupo', who:'Marketing'},
+    {text:'Enviar Push 1 — Agenda al grupo', who:'Marketing'},
+    {text:'Subir leads a Salesforce con rating Cold/Warm/Hot', who:'Asistentes'},
+    {text:'Enviar Push 3 — Recordatorio diario de leads', who:'Marketing'},
+    {text:'Enviar 2–3 fotos/vídeos por día para LinkedIn (Push 2)', who:'Asistentes'},
+    {text:'Soporte y escalada de incidencias on-site', who:'Miguel Ángel'},
+    {text:'Soporte a clientes Juniper en la feria', who:'Manon'},
+    {text:'Canal de temas de viaje en el grupo', who:'Carolina'},
+    {text:'Enviar Push 5 — Cierre al final de la feria', who:'Marketing'},
   ],
   post:[
-    {text:'Review uploaded leads and reconcile with report', who:'Zoher'},
-    {text:'Validate all leads are created in Salesforce', who:'Zoher'},
-    {text:'Hot leads → manual outreach the following Monday', who:'Zoher'},
-    {text:'Trigger automatic Journey for Non-Hot leads', who:'Zoher'},
-    {text:'Internal notice to Sales & Marketing (5 days post-show)', who:'Zoher'},
-    {text:'Manage leads responding to Journey (Hot/Cold)', who:'Rodrigo (SDA)'},
-    {text:'Write post-show report (KPIs + charts)', who:'Marketing + Zoher'},
-    {text:'Log expenses in PayHawk (field "Show ID")', who:'Attendees'},
-    {text:'Return review: conversion to opportunities', who:'Zoher + Juan'},
+    {text:'Revisar leads subidos y conciliar con informe', who:'Zoher'},
+    {text:'Validar que todos los leads estén creados en Salesforce', who:'Zoher'},
+    {text:'Leads calientes → contacto manual el lunes siguiente', who:'Zoher'},
+    {text:'Activar Journey automático para leads no calientes', who:'Zoher'},
+    {text:'Aviso interno a Ventas & Marketing (5 días post-show)', who:'Zoher'},
+    {text:'Gestionar leads respondiendo al Journey (Hot/Cold)', who:'Rodrigo (SDA)'},
+    {text:'Redactar informe post-show (KPIs + gráficos)', who:'Marketing + Zoher'},
+    {text:'Registrar gastos en PayHawk (campo "Show ID")', who:'Asistentes'},
+    {text:'Revisión de retorno: conversión a oportunidades', who:'Zoher + Juan'},
   ]
 };
 
-function getStatus(fair){
-  const s=new Date(fair.start), e=new Date(fair.end);
-  if(e<today) return {label:'Past',cls:'badge-past'};
-  const diff=(s-today)/(1000*60*60*24);
-  if(diff<=30) return {label:'Coming up',cls:'badge-soon'};
-  return {label:'Planned',cls:'badge-upcoming'};
+let checkedTasks = {};
+let checkedCount = 0;
+
+function getStatus(f) {
+  const s = new Date(f.start), e = new Date(f.end);
+  if (e < today) return { label:'Pasada', cls:'badge-past', sClass:'status-past' };
+  const diff = (s - today) / (1000*60*60*24);
+  if (diff <= 30) return { label:'Próxima', cls:'badge-soon', sClass:'status-soon' };
+  return { label:'Planificada', cls:'badge-upcoming', sClass:'status-upcoming' };
 }
-function formatDate(d){
-  return new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+
+function daysUntil(dateStr) {
+  const d = new Date(dateStr);
+  const diff = Math.ceil((d - today) / (1000*60*60*24));
+  if (diff < 0) return null;
+  if (diff === 0) return 'Hoy';
+  if (diff === 1) return 'Mañana';
+  if (diff <= 7) return `En ${diff} días`;
+  if (diff <= 30) return `En ${diff} días`;
+  const w = Math.round(diff / 7);
+  const m = Math.round(diff / 30);
+  if (m >= 2) return `En ${m} meses`;
+  return `En ${w} sem.`;
 }
-function switchTab(id){
-  document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active',['calendar','planner','guide'][i]===id);
+
+function fmtDate(d) {
+  return new Date(d).toLocaleDateString('es-ES', {day:'numeric', month:'short'});
+}
+
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', ['calendar','planner','guide'][i] === id);
   });
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.getElementById('view-'+id).classList.add('active');
-  if(id==='planner') renderTasks();
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  if (id === 'planner') renderTasks();
 }
-function renderCalendar(){
-  const months={};
-  fairs.forEach(f=>{
-    const key=new Date(f.start).toLocaleDateString('en-GB',{month:'long',year:'numeric'});
-    if(!months[key]) months[key]=[];
+
+function goToFair(id) {
+  switchTab('planner');
+  document.getElementById('fair-select').value = id;
+  renderTasks();
+}
+
+function renderCalendar() {
+  const months = {};
+  fairs.forEach(f => {
+    const key = new Date(f.start).toLocaleDateString('es-ES', {month:'long', year:'numeric'});
+    if (!months[key]) months[key] = [];
     months[key].push(f);
   });
-  let html='';
-  Object.keys(months).forEach(m=>{
-    html+=`<div class="month-group"><div class="month-label">${m}</div>`;
-    months[m].forEach(f=>{
-      const st=getStatus(f);
-      html+=`<div class="fair-card" onclick="goToFair('${f.id}')">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-          <div>
-            <div class="fair-name">${f.emoji} ${f.name}</div>
-            <div class="fair-meta">
-              <span><i class="ti ti-map-pin" style="font-size:12px"></i>${f.city}</span>
-              <span><i class="ti ti-calendar" style="font-size:12px"></i>${formatDate(f.start)} – ${formatDate(f.end)}</span>
-            </div>
+  let html = '';
+  Object.keys(months).forEach(m => {
+    html += `<div class="month-label">${m}</div>`;
+    months[m].forEach((f, i) => {
+      const st = getStatus(f);
+      const cd = daysUntil(f.start);
+      html += `<div class="fair-card ${st.sClass}" style="animation-delay:${i*30}ms" onclick="goToFair('${f.id}')">
+        <div class="fair-info">
+          <div class="fair-name">${f.emoji} ${f.name}</div>
+          <div class="fair-meta">
+            <span><i class="ti ti-map-pin"></i>${f.city}</span>
+            <span><i class="ti ti-calendar"></i>${fmtDate(f.start)} – ${fmtDate(f.end)}</span>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:end;gap:4px">
-            <span class="badge ${st.cls}">${st.label}</span>
-            <span style="font-size:11px;color:var(--color-text-secondary)">View tasks →</span>
-          </div>
+        </div>
+        <div class="fair-right">
+          <span class="badge ${st.cls}"><span class="badge-dot"></span>${st.label}</span>
+          ${cd ? `<span class="countdown ${st.cls === 'badge-soon' ? 'soon' : ''}">${cd}</span>` : ''}
+          <span class="arrow-hint"><i class="ti ti-arrow-right"></i></span>
         </div>
       </div>`;
     });
-    html+='</div>';
   });
-  document.getElementById('calendar-content').innerHTML=html;
+  document.getElementById('calendar-content').innerHTML = html;
 }
-function goToFair(id){
-  switchTab('planner');
-  document.getElementById('fair-select').value=id;
-  renderTasks();
-}
-function renderSelect(){
-  const sel=document.getElementById('fair-select');
-  fairs.forEach(f=>{
-    const opt=document.createElement('option');
-    opt.value=f.id;
-    opt.textContent=`${f.emoji} ${f.name} (${formatDate(f.start)})`;
-    sel.appendChild(opt);
+
+function renderSelect() {
+  const sel = document.getElementById('fair-select');
+  fairs.forEach(f => {
+    const o = document.createElement('option');
+    o.value = f.id;
+    o.textContent = `${f.emoji} ${f.name} · ${fmtDate(f.start)}`;
+    sel.appendChild(o);
   });
 }
-function renderTasks(){
-  const val=document.getElementById('fair-select').value;
-  const fair=fairs.find(f=>f.id===val);
-  if(!fair) return;
-  const colors={pre:'#7F77DD',durante:'#1D9E75',post:'#D85A30'};
-  const labels={pre:'PRE-SHOW',durante:'DURING THE SHOW',post:'POST-SHOW'};
-  let html=`<div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px"><i class="ti ti-calendar" style="font-size:13px;vertical-align:-1px;margin-right:4px"></i>${fair.emoji} ${fair.name} — ${fair.city} — ${formatDate(fair.start)} to ${formatDate(fair.end)}</div>`;
-  ['pre','durante','post'].forEach(phase=>{
-    html+=`<div class="bucket"><div class="bucket-header"><div class="bucket-dot" style="background:${colors[phase]}"></div><div class="bucket-title">${labels[phase]}</div><div class="bucket-count">${tasks[phase].length} tasks</div></div>`;
-    tasks[phase].forEach(t=>{
-      html+=`<div class="task-row"><div class="task-check"></div><div class="task-col"><div class="task-text">${t.text}</div><div style="margin-top:3px"><span class="task-assignee"><i class="ti ti-user" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>${t.who}</span></div></div></div>`;
+
+function toggleTask(fairId, phase, idx) {
+  const key = `${fairId}-${phase}-${idx}`;
+  checkedTasks[key] = !checkedTasks[key];
+  if (checkedTasks[key]) checkedCount++; else checkedCount--;
+  document.getElementById('pill-checked').textContent = checkedCount;
+  renderTasks(true);
+}
+
+function renderTasks(preserveScroll) {
+  const val = document.getElementById('fair-select').value;
+  const fair = fairs.find(f => f.id === val);
+  if (!fair) return;
+
+  const phases = [
+    { key:'pre', label:'PRE-SHOW', icon:'ti-clipboard-list', cls:'b-pre' },
+    { key:'durante', label:'DURANTE LA FERIA', icon:'ti-activity', cls:'b-during' },
+    { key:'post', label:'POST-SHOW', icon:'ti-chart-bar', cls:'b-post' },
+  ];
+
+  const total = phases.reduce((s, p) => s + tasks[p.key].length, 0);
+  let done = phases.reduce((s, p) => s + tasks[p.key].filter((_, i) => checkedTasks[`${val}-${p.key}-${i}`]).length, 0);
+  const pct = Math.round((done / total) * 100);
+
+  let html = `<div class="show-header-card">
+    <div class="show-header-emoji">${fair.emoji}</div>
+    <div class="show-header-info">
+      <div class="show-header-name">${fair.name}</div>
+      <div class="show-header-sub">
+        <span><i class="ti ti-map-pin"></i>${fair.city}</span>
+        <span><i class="ti ti-calendar"></i>${fmtDate(fair.start)} – ${fmtDate(fair.end)}</span>
+      </div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-label"><span>Progreso de tareas</span><strong>${done} / ${total} — ${pct}%</strong></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+  </div>`;
+
+  phases.forEach(p => {
+    const list = tasks[p.key];
+    html += `<div class="bucket ${p.cls}">
+      <div class="bucket-head">
+        <div class="bucket-icon"><i class="ti ${p.icon}"></i></div>
+        <span class="bucket-label">${p.label}</span>
+        <span class="bucket-count-badge">${list.length}</span>
+      </div>`;
+    list.forEach((t, i) => {
+      const k = `${val}-${p.key}-${i}`;
+      const ck = checkedTasks[k] ? 'checked' : '';
+      html += `<div class="task-row ${ck ? 'done' : ''}">
+        <div class="task-check ${ck}" onclick="toggleTask('${val}','${p.key}',${i})"></div>
+        <div class="task-body">
+          <div class="task-text">${t.text}</div>
+          <span class="assignee-chip"><i class="ti ti-user"></i>${t.who}</span>
+        </div>
+      </div>`;
     });
-    html+='</div>';
+    html += '</div>';
   });
-  document.getElementById('tasks-content').innerHTML=html;
+
+  document.getElementById('tasks-content').innerHTML = html;
 }
 
 renderCalendar();
 renderSelect();
 renderTasks();
 </script>
+</body>
+</html>
